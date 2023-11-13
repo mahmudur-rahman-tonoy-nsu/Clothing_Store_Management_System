@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1699910512 source:c:\users\user\desktop\clothing store management system\clothing store management system\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ascii_art.h"
+
+1699910597 c:\users\user\desktop\clothing store management system\clothing store management system\ascii_art.h
+
