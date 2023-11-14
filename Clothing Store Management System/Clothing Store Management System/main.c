@@ -3,7 +3,6 @@ Clothing Store Management System
 
 Name: Md Mahmudur Rahman Tonoy
 ID  : 2322988642
-Section: 09
 **/
 
 
