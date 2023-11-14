@@ -36,7 +36,7 @@ int main(void){
 }
 
 
-// function definition
+// function definition for login
 void login(){
 
  char username[20];
@@ -81,7 +81,7 @@ void login(){
 }
 
 
-// function definition
+// function definition of menu
 void mainn() {
 
     int i;
@@ -120,7 +120,7 @@ void mainn() {
 }
 
 
-// function definition
+// function definition which takes input of items, calculates total amount and stores in file
 void enterSalesData() {
     int i;
     char x;
@@ -176,10 +176,12 @@ void enterSalesData() {
                 mainn();
         }
     } while (1);
+
+       fclose(fp);
 }
 
 
-// function definition
+// function definition which displays the items which are stored in file
 void displaySalesData() {
 
     int productid;
@@ -209,7 +211,7 @@ void displaySalesData() {
 }
 
 
-// function definition
+// function definition which deletes items according to user's input
 void del() {
 
     char productname[50];
