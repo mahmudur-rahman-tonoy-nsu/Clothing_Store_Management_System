@@ -9,11 +9,11 @@ ID  : 2322988642
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "login.h"
+#include "menu.h"
 #include "ascii_art.h"
 
 // function prototypes
-void login();
-void mainn();
 void enterSalesData();
 void displaySalesData();
 void del();
@@ -30,92 +30,8 @@ int main(void){
 
     printf("%s", ascii_art);
     login();
-    mainn();
+    menu();
     return 0;
-}
-
-
-// function definition for login
-void login(){
-
- char username[20];
- char password [20];
-
- printf("\n\t\t\t\t        *********************************************");
- printf("\n\t\t\t\t        *                 WELCOME                   *");
- printf("\n\t\t\t\t        *                   TO                      *");
- printf("\n\t\t\t\t        *            THE CLOTHING STORE             *");
- printf("\n\t\t\t\t        *                MANAGEMENT                 *");
- printf("\n\t\t\t\t        *                 SYSTEM                    *");
- printf("\n\t\t\t\t        *********************************************");
-
- printf("\n\t\t\t\t\t\t\t   LOGIN ");
- printf("\n\n\t\t\t\t\t\tEnter Username: ");
- gets(username);
-
- printf("\n\t\t\t\t\t\tEnter Password: ");
- gets (password);
-
-{
-     if (strcmp (username, "tonoy")==0)
-   {
-        if(strcmp (password, "football")==0)
-		{
-		   printf("  \n\n\n \t\t\t        WELCOME TO THE CLOTHING STORE MANAGEMENT SYSTEM !!!!");
-		   printf("  \n\n\n \t\t\t\t\t\t LOGIN IS SUCCESSFUL\n\n\n");
-        }
-	 else
-	    {
-         printf("\n      \t\t\t\t ----SORRY !!!!  Your Entered password is wrong----\n\n\n");
-         login();
-        }
-    }
- else
-	    {
-         printf("\n      \t\t\t\t ----SORRY !!!!  Your Entered name is wrong----\n\n\n");
-         login();
-        }
-}
-	mainn();
-}
-
-
-// function definition of menu
-void mainn() {
-
-    int i;
-    char x;
-    float amount = 0.0, discount_amount = 0.0, sub_total = 0.0, total_amount = 0.0;
-    struct item i1;
-    FILE *fp;
-
-    printf("\n\t\t\t\t        **************************");
-    printf("\n\t\t\t\t        +        Main Menu       +");
-    printf("\n\t\t\t\t        **************************\n");
-    printf("\n\t\t\t\t          1. Enter Sales Data\n");
-    printf("\n\t\t\t\t          2. Display Sales Data\n");
-    printf("\n\t\t\t\t          3. Delete Sales Data\n");
-    printf("\n\t\t\t\t          4. Exit\n");
-    printf("\n\t\t\t\t        **************************\n");
-    printf("\n\t\t\t\t          Enter your choice: ");
-    scanf("%d", &i);
-
-    switch (i) {
-        case 1:
-            enterSalesData();
-            break;
-        case 2:
-            displaySalesData();
-            break;
-        case 3:
-            del();
-            break;
-        case 4:
-            exit(0);
-        default:
-            printf("\nInvalid Choice, please enter again.\n");
-            break;
-    }
 }
 
 
@@ -172,7 +88,7 @@ void enterSalesData() {
             case 'Y':
                 break;
             default:
-                mainn();
+                menu();
         }
     } while (1);
 
@@ -206,7 +122,7 @@ void displaySalesData() {
 
     printf("\nPress Enter to return to the Main Menu: ");
 
-    mainn();
+    menu();
 }
 
 
@@ -245,6 +161,6 @@ void del() {
     printf("\Item deleted Successfully.");
     printf("\nPress Enter to return to Main Menu: ");
 
-    mainn();
+    menu();
 }
 
